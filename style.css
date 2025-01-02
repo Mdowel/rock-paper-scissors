@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    color: azure;
+    text-shadow: 1px 1px 2px rgb(38, 56, 53);
+}
+
+main {
+    background-color: darkcyan;
+    padding: 1em;
+    min-height: fit-content;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.15rem;
+}
+
+/* selection & result section */
+.game-container {
+    margin: 2em;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.selection-box {
+    width: 33%;
+    text-align: center;
+    background-color: rgb(145, 181, 178);
+    padding: 0 .25em 1em .25em;
+    border-radius: 8px;
+}
+
+#your-selection, #house-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+#your-selection > img {
+    width: 60px;
+}
+
+
+
+/* buttons */
+.buttons {
+    height: 50%;
+    max-height: 300px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    padding: 2em;
+    margin: 2em;
+
+}
+
+.action-btn {
+    border: 3px solid pink;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+#paper {
+    grid-column: 3;
+}
+
+#scissors {
+    grid-column: 2;
+}
