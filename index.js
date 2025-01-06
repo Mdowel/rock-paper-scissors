@@ -1,7 +1,9 @@
-const playerBtns = document.querySelectorAll('button')
 const playerSelectionEl = document.getElementById('your-selection')
 const houseSelectionEl = document.getElementById('house-selection')
 const resultEl = document.getElementById('result')
+const toggleBtn = document.getElementById('spock-toggle')
+const playerBtnsSection = document.getElementById('game-buttons')
+// const playerBtns = playerBtnsSection.querySelectorAll('button')
 
 const rockImg = document.createElement("img") 
 rockImg.src = 'images/icon-rock.svg'
@@ -12,22 +14,30 @@ paperImg.src = 'images/icon-paper.svg'
 const scissorsImg = document.createElement("img") 
 scissorsImg.src = 'images/icon-scissors.svg'
 
+const lizardImg = document.createElement("img") 
+lizardImg.src = 'images/icon-lizard.svg'
+
+const spockImg = document.createElement("img") 
+spockImg.src = 'images/icon-spock.svg'
+
 let playerSelection = ''
+let spockMode = false
 
 const houseOptions = [
     {
         name: "Rock",
         img: rockImg
     },
+    
     {
         name: "Paper",
         img: paperImg
     },
+
     {
         name: "Scissors",
         img: scissorsImg
-    },
-
+    }
 ]
 
 function getRandomIndex(array) {
@@ -35,25 +45,33 @@ function getRandomIndex(array) {
     return randomIndex
 }
 
-playerBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // console.log(`${btn.id} clicked`)
+playerBtnsSection.addEventListener('click', (e) => {
+    const clickedBtn = e.target.closest('.action-btn')
+    if(!clickedBtn) return
+
+    console.log(`${clickedBtn.id} clicked`)
         playerSelectionEl.innerHTML = ''
-        if (btn.id === 'rock') {
+        if (clickedBtn.id === 'rock') {
             playerSelectionEl.append('Rock', rockImg)
             playerSelection = 'Rock'
 
-        } else if (btn.id === 'paper') {
+        } else if (clickedBtn.id === 'paper') {
             playerSelectionEl.append('Paper', paperImg)
             playerSelection = 'Paper'
 
-        } else if (btn.id === 'scissors') {
+        } else if (clickedBtn.id === 'scissors') {
             playerSelectionEl.append('Scissors', scissorsImg)
             playerSelection = 'Scissors'
 
+        } else if (clickedBtn.id === 'lizard') {
+            playerSelectionEl.append('Lizard', lizardImg)
+            playerSelection = 'Lizard'
+
+        } else if (clickedBtn.id === 'spock') {
+            playerSelectionEl.append('Spock', spockImg)
+            playerSelection = 'Spock'
         }
         getHouseSelection()
-    })
 })
 
 function getHouseSelection() {
@@ -82,5 +100,77 @@ function getHouseSelection() {
         resultEl.innerText = 'You Lose 😞'
     } else if (playerSelection === 'Scissors' && houseSelection.name === 'Paper'){
         resultEl.innerText = 'You Win! 😀'
+    } 
+    // spock rules
+    else if (playerSelection === 'Rock' && houseSelection.name === 'Lizard'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Rock' && houseSelection.name === 'Spock'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Paper' && houseSelection.name === 'Lizard'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Paper' && houseSelection.name === 'Spock'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Scissors' && houseSelection.name === 'Lizard'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Scissors' && houseSelection.name === 'Spock'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Lizard' && houseSelection.name === 'Rock'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Lizard' && houseSelection.name === 'Paper'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Lizard' && houseSelection.name === 'Scissors'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Lizard' && houseSelection.name === 'Spock'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Spock' && houseSelection.name === 'Rock'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Spock' && houseSelection.name === 'Paper'){
+        resultEl.innerText = 'You Lose 😞'
+    }
+    else if (playerSelection === 'Spock' && houseSelection.name === 'Scissors'){
+        resultEl.innerText = 'You Win! 😀'
+    }
+    else if (playerSelection === 'Spock' && houseSelection.name === 'Lizard'){
+        resultEl.innerText = 'You Lose 😞'
     }
 }
+
+// spock mode
+toggleBtn.addEventListener('click', () => {
+    console.log('clicked')
+    if(!spockMode){
+        
+        playerBtnsSection.innerHTML += `
+        <button id="lizard" class="action-btn">
+            <img id="lizard-img" src="images/icon-lizard.svg" alt="lizard">
+        </button>
+        <button id="spock" class="action-btn">
+            <img id="spock-img" src="images/icon-spock.svg" alt="spock">
+        </button>  
+        `
+        
+        houseOptions.push(
+            {
+                name: "Lizard",
+                img: lizardImg
+            },
+            
+            {
+                name: "Spock",
+                img: spockImg
+            },
+        )
+        spockMode = true
+    }
+})
