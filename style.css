@@ -44,11 +44,19 @@ h2 {
     gap: 1em;
 }
 
-#your-selection > img {
+#your-selection > img,
+.house-selection-img {
     width: 60px;
+    margin-top: .25em;
 }
 
+.result-box {
+    text-align: center;
+}
 
+#result {
+    font-size: larger;
+}
 
 /* buttons */
 .buttons {
