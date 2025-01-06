@@ -1,16 +1,18 @@
 body {
+    background-color: darkcyan;
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    margin: 0;
     font-family: "Roboto", sans-serif;
     color: azure;
     text-shadow: 1px 1px 2px rgb(38, 56, 53);
 }
 
 main {
-    background-color: darkcyan;
     padding: 1em;
-    min-height: fit-content;
+    /* min-height: fit-content; */
+    width: 100%;
 }
 
 h1 {
@@ -88,4 +90,21 @@ h2 {
 
 #scissors {
     grid-column: 2;
+}
+
+@media (min-width: 550px) {
+    main {
+        max-width: 600px;
+        padding-top: 2.5em;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1em;
+    }
+
+    .buttons {
+        margin-top: 5em;
+        display: flex;
+    }
 }
