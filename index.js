@@ -6,6 +6,9 @@ const playerBtnsSection = document.getElementById('game-buttons')
 // const playerBtns = playerBtnsSection.querySelectorAll('button')
 const logo = document.getElementById('logo')
 const spockLogo = document.getElementById('spock-logo')
+const rulesBtn = document.getElementById('rules-btn')
+const rulesModal = document.getElementById('rules-modal')
+const closeModalBtn = document.getElementById('close-modal-btn')
 
 const rockImg = document.createElement("img") 
 rockImg.src = 'images/icon-rock.svg'
@@ -177,7 +180,7 @@ toggleBtn.addEventListener('click', () => {
             },
         )
         spockMode = true
-        
+
     } else {
         // change logo
         spockLogo.classList.add('hidden')
@@ -193,4 +196,12 @@ toggleBtn.addEventListener('click', () => {
 
         spockMode = false
     }
+})
+
+rulesBtn.addEventListener('click', () => {
+    rulesModal.classList.remove('hidden')
+})
+
+closeModalBtn.addEventListener('click', () => {
+    rulesModal.classList.add('hidden')
 })

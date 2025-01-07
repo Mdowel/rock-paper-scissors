@@ -9,11 +9,13 @@ body {
     color: azure;
     text-shadow: 1px 1px 2px rgb(38, 56, 53);
     padding: 25px 0.5em;
+    position: relative;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 main {
@@ -29,16 +31,76 @@ h2 {
     font-size: 1.15rem;
 }
 
+h3 {
+    text-decoration: underline;
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+span {
+    font-weight: 700;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#rules-btn {
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: azure;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: 2em;
+    border-bottom: 1px solid azure;
+}
+
+#rules-btn:hover {
+    color: rgb(214, 222, 222);
+}
+
 #spock-toggle {
     width: 30px;
     height: 30px;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     margin-right: 1em;
     display: flex;
 }
 
 .hidden {
     display: none;
+}
+
+/* rules modal */
+.modal {
+    background-color: #181f35;
+    color: #9db5b3;
+    border: 6px solid #424242;
+    border-radius: 6px;
+    height: 400px;
+    width: 400px;
+    padding: 1em;
+    font-size: large;
+    text-align: center;
+    line-height: 2.5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    transform: scale(1.5);
 }
 
 /* selection & result section */

@@ -13,6 +13,7 @@
     <header>
         <div id="logo"><img src="images/logo.svg" alt="Rock Paper Scissors"></div>
         <div id="spock-logo" class="hidden"><img src="images/logo-bonus.svg" alt="Rock Paper Scissors Lizard Spock"></div>
+        <button id="rules-btn">Rules</button>
         <button id="spock-toggle">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  
             stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-ufo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16.95 9.01c3.02 .739 
@@ -21,7 +22,15 @@
         </button>
     </header>
     <main>
-        <!-- <h1>Rock Paper Scissors</h1> -->
+        <section class="modal " id="rules-modal">
+            <button id="close-modal-btn"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10l4 4m0 -4l-4 4" /><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /></svg></button>
+            <h3>Rules</h3>
+            <p><span>Scissors:</span> Cuts paper and decapitates lizard</p>
+            <p><span>Paper:</span> Covers rock and disproves Spock</p>
+            <p><span>Rock:</span> Crushes lizard and breaks scissors</p>
+            <p><span>Lizard:</span> Poisons Spock and eats paper</p>
+            <p><span>Spock:</span> Smashes scissors and vaporizes rock</p>
+        </section>
         <section class="game-container">
             <div class="selection-box">
                 <h2>You Played</h2>
