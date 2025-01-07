@@ -4,6 +4,8 @@ const resultEl = document.getElementById('result')
 const toggleBtn = document.getElementById('spock-toggle')
 const playerBtnsSection = document.getElementById('game-buttons')
 // const playerBtns = playerBtnsSection.querySelectorAll('button')
+const logo = document.getElementById('logo')
+const spockLogo = document.getElementById('spock-logo')
 
 const rockImg = document.createElement("img") 
 rockImg.src = 'images/icon-rock.svg'
@@ -148,9 +150,12 @@ function getHouseSelection() {
 
 // spock mode
 toggleBtn.addEventListener('click', () => {
-    console.log('clicked')
     if(!spockMode){
-        
+        // change logo
+        logo.classList.add('hidden')
+        spockLogo.classList.remove('hidden')
+
+        // add btns to DOM
         playerBtnsSection.innerHTML += `
         <button id="lizard" class="action-btn">
             <img id="lizard-img" src="images/icon-lizard.svg" alt="lizard">
@@ -159,7 +164,7 @@ toggleBtn.addEventListener('click', () => {
             <img id="spock-img" src="images/icon-spock.svg" alt="spock">
         </button>  
         `
-        
+        // add to houseOptions array
         houseOptions.push(
             {
                 name: "Lizard",
@@ -172,11 +177,16 @@ toggleBtn.addEventListener('click', () => {
             },
         )
         spockMode = true
+        
     } else {
+        // change logo
+        spockLogo.classList.add('hidden')
+        logo.classList.remove('hidden')
+
         // remove btns from DOM
         document.getElementById('lizard').remove()
         document.getElementById('spock').remove()
-        
+
         // remove objects from houseOptions array
         houseOptions.pop()
         houseOptions.pop()
