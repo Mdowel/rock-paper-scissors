@@ -23,6 +23,7 @@ lizardImg.src = 'images/icon-lizard.svg'
 
 const spockImg = document.createElement("img") 
 spockImg.src = 'images/icon-spock.svg'
+spockImg.id = 'spockImg'
 
 let playerSelection = ''
 let spockMode = false

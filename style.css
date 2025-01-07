@@ -177,6 +177,14 @@ button:hover {
     grid-column: 3;
 }
 
+#spock-img {
+    transform: translateX(4px);
+}
+
+#spockImg {
+    transform: translateX(8px);
+}
+
 @media (min-width: 550px) {
     body {
         max-width: 600px;
