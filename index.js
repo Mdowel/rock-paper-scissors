@@ -3,7 +3,6 @@ const houseSelectionEl = document.getElementById('house-selection')
 const resultEl = document.getElementById('result')
 const toggleBtn = document.getElementById('spock-toggle')
 const playerBtnsSection = document.getElementById('game-buttons')
-// const playerBtns = playerBtnsSection.querySelectorAll('button')
 const logo = document.getElementById('logo')
 const spockLogo = document.getElementById('spock-logo')
 const rulesBtn = document.getElementById('rules-btn')
@@ -198,8 +197,13 @@ toggleBtn.addEventListener('click', () => {
     }
 })
 
+// rules modal
 rulesBtn.addEventListener('click', () => {
-    rulesModal.classList.remove('hidden')
+    if (rulesModal.classList.contains('hidden')) {
+        rulesModal.classList.remove('hidden')
+    } else {
+        rulesModal.classList.add('hidden')
+    }
 })
 
 closeModalBtn.addEventListener('click', () => {
