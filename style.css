@@ -8,6 +8,7 @@ body {
     font-family: "Roboto", sans-serif;
     color: azure;
     text-shadow: 1px 1px 2px rgb(38, 56, 53);
+    padding: 1em 0.5em;
 }
 
 header {
@@ -80,10 +81,9 @@ h2 {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     padding: 2em;
     margin: 2em;
-
 }
 
 .action-btn {
@@ -94,7 +94,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1em;
+    margin: 1em auto;
 }
 
 #paper {
@@ -103,6 +103,14 @@ h2 {
 
 #scissors {
     grid-column: 2;
+}
+
+#lizard {
+    grid-column: 1;
+}
+
+#spock {
+    grid-column: 3;
 }
 
 @media (min-width: 550px) {
