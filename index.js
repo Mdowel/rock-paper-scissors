@@ -172,5 +172,15 @@ toggleBtn.addEventListener('click', () => {
             },
         )
         spockMode = true
+    } else {
+        // remove btns from DOM
+        document.getElementById('lizard').remove()
+        document.getElementById('spock').remove()
+        
+        // remove objects from houseOptions array
+        houseOptions.pop()
+        houseOptions.pop()
+
+        spockMode = false
     }
 })
